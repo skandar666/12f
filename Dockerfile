@@ -6,7 +6,7 @@ RUN go mod download
 COPY . .
 RUN go build -o main .
 FROM alpine:latest
-COPY tracker.db .
+#COPY tracker.db .
 WORKDIR /root/
 COPY --from=builder /app/main .
 CMD ["./main"]
